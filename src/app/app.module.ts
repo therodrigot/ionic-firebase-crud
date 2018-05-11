@@ -10,6 +10,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
 import { ShoppingListService } from '../services/shoppinglist/shoppinglist.service';
 
 import { MyApp } from './app.component';
+import { ToastService } from '../services/toast/toast.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MyApp } from './app.component';
     StatusBar,
     SplashScreen,
     ShoppingListService,
+    ToastService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ShoppingItem } from '../../models/item/item.model';
 import { ShoppingListService } from '../../services/shoppinglist/shoppinglist.service';
 import { AlertController } from 'ionic-angular';
+import { ToastService } from '../../services/toast/toast.service';
 
 @IonicPage()
 @Component({
@@ -20,12 +21,14 @@ export class EditShoppingItemPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private shoppingService:ShoppingListService,
-    public alertCtrl:AlertController) {
+    public alertCtrl:AlertController,
+    public toastSvc:ToastService) {
   }
 
   saveItem(item:ShoppingItem){
     this.shoppingService.editItem(item).then(
       ()=>{
+        this.toastSvc.show(item.name+' Saved')
         this.navCtrl.setRoot("HomePage")
       }
     );
@@ -58,6 +61,7 @@ export class EditShoppingItemPage {
   deleteItem(item:ShoppingItem){
     this.shoppingService.deleteItem(item).then(
       ()=>{
+        this.toastSvc.show(item.name+' Removed')
         this.navCtrl.setRoot("HomePage")
       }
     );
