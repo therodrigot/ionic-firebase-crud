@@ -1,5 +1,5 @@
 export const FIREBASE_CONFIG = {
-	apiKey: "",
+	apiKey: "apikey",
     authDomain: "",
     databaseURL: "",
     projectId: "",
