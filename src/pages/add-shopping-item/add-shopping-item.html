@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Item</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input placeholder="iPad Pro" [(ngModel)]="item.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-input type="number" placeholder="1" [(ngModel)]="item.quantity"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <ion-input type="number" placeholder="700" [(ngModel)]="item.price"></ion-input>
+  </ion-item>
+
+<!-- {{item | json}} -->
+
+  <button ion-button block clear (click)="addItem(item)">Add</button>
+</ion-content>

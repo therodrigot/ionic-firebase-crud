@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button navPush="HomePage" ion-button>home</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- {{item|json}} -->
+  <ion-item *ngIf="item">
+    <ion-label>Name</ion-label>
+    <ion-input placeholder="iPad Pro" [(ngModel)]="item.name"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="item">
+    <ion-label>Quantity</ion-label>
+    <ion-input type="number" placeholder="1" [(ngModel)]="item.quantity"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="item">
+    <ion-label>Price</ion-label>
+    <ion-input type="number" placeholder="700" [(ngModel)]="item.price"></ion-input>
+  </ion-item>
+
+  <button ion-button block clear (click)="saveItem(item)">Save</button>
+  <button ion-button block clear (click)="confirmDelete(item)">Delete</button>
+
+</ion-content>
