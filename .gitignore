@@ -36,4 +36,3 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 src/app/firebase.credentials.ts
-ionic.config.json
